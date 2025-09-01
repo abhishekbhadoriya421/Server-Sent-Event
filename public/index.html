@@ -12,7 +12,14 @@
     <script>
         console.log("hello Abhishek");
         let messageBox = document.getElementById('message');
+        const sourse = new EventSource('/event');
+        sourse.onmessage = (event) => {
+            messageBox.innerHTML += `<h2>${event.data}</h2>`
+        }
 
+        sourse.onerror = (err) => {
+            console.log("Server disconnected: " + err);
+        }
     </script>
 </body>
 

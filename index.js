@@ -4,7 +4,6 @@ const path = require('path');
 
 
 app.get('/', (req, res) => {
-
     const filePath = path.join(__dirname + '/public/index.html');
     return res.sendFile(filePath);
 });
